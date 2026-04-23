@@ -120,5 +120,14 @@ function validateEntry (entry){
   if (!("title" in entry) || !entry.title || entry.title === "Unknown") {
     isValid = false;
   }
+  if (!("author" in entry) || !entry.author || entry.author === "Unknown") {
+    isValid = false;
+  }
+  if (!("year" in entry) || !entry.year || entry.year === "Unknown") {
+    isValid = false;
+  }
+  if (!("location" in entry) || !entry.location || entry.location === "Unknown") {
+    isValid = false;
+  }
   return isValid;
 }
