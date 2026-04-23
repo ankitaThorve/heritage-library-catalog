@@ -67,3 +67,9 @@ function findByAuthor(catalog, author) {
   }
   return results;
 }
+
+const kingBooks = findByAuthor(catalog, "king");
+console.log(kingBooks.length);
+for (let i = 0; i < kingBooks.length; i++) {
+  console.log(`${kingBooks[i].title} (${kingBooks[i].year})`);
+}
