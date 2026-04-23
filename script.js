@@ -35,7 +35,7 @@ function parseCard(rawString) {
     title: title || "Unknown",
     author: author || "Unknown",
     year: year ? parseInt(year) : "Unknown",
-    location: location || "Unknown"
+    location: location || "Unknown",
   };
   // return trimmedParts;
   // return parts;
@@ -46,9 +46,9 @@ function parseCard(rawString) {
 
 function parseCatalog(rawCards) {
   const catalog = [];
-for(let i=0; i< rawCards.length; i++){
-  catalog.push(parseCard(rawCards[i]))
-}
+  for (let i = 0; i < rawCards.length; i++) {
+    catalog.push(parseCard(rawCards[i]));
+  }
   return catalog;
 }
 
@@ -58,5 +58,12 @@ console.log(catalog.length);
 function findByAuthor(catalog, author) {
   const searchTerm = author.toLowerCase();
   const results = [];
-
+  for (let i = 0; i < catalog.length; i++) {
+    const entry = catalog[i];
+    const author = entry.author.toLowerCase();
+    if (author.includes(searchTerm)) {
+      results.push(entry);
+    }
+  }
+  return results;
 }
