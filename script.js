@@ -34,12 +34,12 @@ function parseCard(rawString) {
   return {
     title: title || "Unknown",
     author: author || "Unknown",
-    year: year,
+    year: year ? parseInt(year) : "Unknown",
     location: location || "Unknown"
   };
   // return trimmedParts;
   // return parts;
 }
 
-const cardResult = parseCard(rawCatalogCards[2]);
-console.log(cardResult);
+// const cardResult = parseCard(rawCatalogCards[2]);
+// console.log(cardResult);
