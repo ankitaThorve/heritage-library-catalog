@@ -21,5 +21,11 @@ const rawCatalogCards = [
   "Ancient Scroll | Anonymous | 850 | ",
 ];
 
+function parseCard(rawString) {
+  const parts = rawString.split("|");
+
+  return parts;
+}
+
 const cardResult = parseCard(rawCatalogCards[2]);
 console.log(cardResult);
