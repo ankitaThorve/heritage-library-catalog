@@ -95,4 +95,6 @@ function groupByDecade(catalog) {
   return grouped;
 }
 const byDecade = groupByDecade(catalog);
-console.log(byDecade);
+// console.log(byDecade);
+function renderEntry (entry){}
+console.log(renderEntry(catalog[0]))
