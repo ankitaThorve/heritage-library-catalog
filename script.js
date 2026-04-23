@@ -163,3 +163,21 @@ function exportToCSV(catalog) {
 
 console.log(exportToCSV(catalog));
 
+console.log(catalog.length)
+console.log(Object.keys(byDecade).length)
+
+let oldestYear = Infinity
+let newestYear =0
+for(let i=0; i< catalog.length; i++){
+  const entry=catalog[i]
+  if(entry.year !== "Unknown"){
+    if(entry.year< oldestYear){
+      oldestYear = entry.year
+    }
+    if(entry.year>newestYear){
+      newestYear = entry.year;
+    }
+  }
+}
+console.log(oldestYear)
+console.log(newestYear)
