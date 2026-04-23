@@ -144,3 +144,14 @@ function exportToJSON(catalog) {
 }
 
 console.log(exportToJSON(catalog.slice(0, 2)));
+
+function exportToCSV (catalog){
+  const header = "Title,Author,Year,Location";
+  const rows = [];
+
+  for(let i=0; i<catalog.length; i++){
+  const entry=catalog[i]
+  const row=`"${entry.title}","${entry.author}","${entry.year}","${entry.location}"`
+  rows.push(row)
+}
+}
