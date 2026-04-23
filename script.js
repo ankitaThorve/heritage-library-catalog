@@ -96,5 +96,29 @@ function groupByDecade(catalog) {
 }
 const byDecade = groupByDecade(catalog);
 // console.log(byDecade);
-function renderEntry (entry){}
+function renderEntry (entry){
+  const title = entry.title || "Unknown";
+const author = entry.author || "Unknown";
+const year = entry.year || "Unknown";
+const location = entry.location || "Unknown";
+const border = "-".repeat(25);
+
+return `${border}
+Title: ${title}
+Author: ${author}
+Year: ${year}
+Location: ${location}
+${border}`;
+}
 console.log(renderEntry(catalog[0]))
+
+function validateEntry (entry){
+  let isValid = true;
+  // if(!entry.title || entry.title === "Unknown"){
+  //   isValid=false
+  // }
+  if (!("title" in entry) || !entry.title || entry.title === "Unknown") {
+    isValid = false;
+  }
+  return isValid;
+}
