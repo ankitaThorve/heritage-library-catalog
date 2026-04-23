@@ -54,3 +54,9 @@ for(let i=0; i< rawCards.length; i++){
 
 const catalog = parseCatalog(rawCatalogCards);
 console.log(catalog.length);
+
+function findByAuthor(catalog, author) {
+  const searchTerm = author.toLowerCase();
+  const results = [];
+
+}
