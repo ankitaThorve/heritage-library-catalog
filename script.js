@@ -20,3 +20,6 @@ const rawCatalogCards = [
   "Mysterious Manuscript | Unknown Author |  | Shelf Z9",
   "Ancient Scroll | Anonymous | 850 | ",
 ];
+
+const cardResult = parseCard(rawCatalogCards[2]);
+console.log(cardResult);
