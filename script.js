@@ -96,23 +96,23 @@ function groupByDecade(catalog) {
 }
 const byDecade = groupByDecade(catalog);
 // console.log(byDecade);
-function renderEntry (entry){
+function renderEntry(entry) {
   const title = entry.title || "Unknown";
-const author = entry.author || "Unknown";
-const year = entry.year || "Unknown";
-const location = entry.location || "Unknown";
-const border = "-".repeat(25);
+  const author = entry.author || "Unknown";
+  const year = entry.year || "Unknown";
+  const location = entry.location || "Unknown";
+  const border = "-".repeat(25);
 
-return `${border}
+  return `${border}
 Title: ${title}
 Author: ${author}
 Year: ${year}
 Location: ${location}
 ${border}`;
 }
-console.log(renderEntry(catalog[0]))
+console.log(renderEntry(catalog[0]));
 
-function validateEntry (entry){
+function validateEntry(entry) {
   let isValid = true;
   // if(!entry.title || entry.title === "Unknown"){
   //   isValid=false
@@ -126,8 +126,21 @@ function validateEntry (entry){
   if (!("year" in entry) || !entry.year || entry.year === "Unknown") {
     isValid = false;
   }
-  if (!("location" in entry) || !entry.location || entry.location === "Unknown") {
+  if (
+    !("location" in entry) ||
+    !entry.location ||
+    entry.location === "Unknown"
+  ) {
     isValid = false;
   }
   return isValid;
 }
+
+// console.log(validateEntry(catalog[0]))
+// console.log(validateEntry(catalog[16]))
+
+function exportToJSON(catalog) {
+  return JSON.stringify(catalog, null, 2);
+}
+
+console.log(exportToJSON(catalog.slice(0, 2)));
